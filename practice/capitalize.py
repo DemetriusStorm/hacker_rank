@@ -6,7 +6,7 @@ For example, alison heck should be capitalised correctly as Alison Heck.
 
 # Complete the solve function below.
 def solve(s):
-    return ' '.join(map(str.capitalize, s.split()))
+    return ' '.join(map(str.capitalize, s.split(' ')))
 
 
 if __name__ == '__main__':
