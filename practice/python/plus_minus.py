@@ -45,7 +45,5 @@ plusMinus_ver2([-4, 0, 1, -6, 8, 9])
 
 if __name__ == '__main__':
     n = int(input().strip())
-
     arr = list(map(int, input().rstrip().split()))
-
     plusMinus(arr)
