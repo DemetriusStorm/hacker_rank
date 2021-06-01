@@ -1,17 +1,11 @@
 #!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
-
 #
 # Complete the 'plusMinus' function below.
 #
 # The function accepts INTEGER_ARRAY arr as parameter.
 #
+from collections import defaultdict
+
 
 def plusMinus(arr):
     # Write your code here
@@ -34,9 +28,24 @@ def plusMinus(arr):
     return [print(f'{num:.6f}') for num in result]
 
 
-if __name__ == '__main__':
-    n = int(input().strip())
+def plusMinus_ver2(array):
+    result = defaultdict(int)
+    for num in array:
+        if num > 0:
+            result['positive'] += 1
+        elif num < 0:
+            result['negative'] += 1
+        else:
+            result['zeros'] += 1
 
-    arr = list(map(int, input().rstrip().split()))
+    return list(map(lambda x: print(f'{(x / len(array)):.6f}'), result.values()))
 
-    plusMinus(arr)
+
+plusMinus_ver2([-4, 0, 1, -6, 8, 9])
+
+# if __name__ == '__main__':
+#     n = int(input().strip())
+#
+#     arr = list(map(int, input().rstrip().split()))
+#
+#     plusMinus(arr)
