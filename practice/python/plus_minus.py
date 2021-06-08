@@ -38,7 +38,9 @@ def plusMinus_ver2(array):
         else:
             result['zeros'] += 1
 
-    return list(map(lambda x: print(f'{(x / len(array)):.6f}'), result.values()))
+    return list(map(
+        lambda x: print(f'{(x / len(array)):.6f}'), result.values()
+    ))
 
 
 plusMinus_ver2([-4, 0, 1, -6, 8, 9])
